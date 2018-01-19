@@ -932,7 +932,7 @@ strong, b {
   font-size: 2rem;
 }
 .footer--bottom {
-  background-color: rgba(51,51,51,0.08);
+  background-color: rgba(0,0,0,.2);
 }
 
 @media(min-width: 600px) {
