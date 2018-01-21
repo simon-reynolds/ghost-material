@@ -8,7 +8,7 @@
     <header class="card--header">
 {{/if}}
     <!-- Title -->
-    <h5 class="card--title" itemprop="headline"><a href="{{url}}">{{title}}</a></h5>
+    <h5 class="card--title" itemprop="headline">{{title}}</h5>
     <span class="card--subtitle">
         <i class="fa fa-calendar-o"></i>
         <time datetime="{{date format='YYYY-MM-DD'}}" itemprop="datePublished">
@@ -16,12 +16,12 @@
         </time>
     </span>
     <!-- Image -->
-    {{#if feature_image}}<a href="{{url}}"><img class="bg-image" src="{{img_url feature_image}}" /></a>{{/if}}
+    {{#if feature_image}}<img class="bg-image" src="{{img_url feature_image}}" />{{/if}}
     </header>
     <!-- Content -->
     <section class="card--main">
     <summary class="card--content" itemprop="articleBody">
-        <a href="{{url}}">{{excerpt words="50"}}&hellip;</a>
+        {{excerpt words="50"}}&hellip;
     </summary>
     </section>
     <!-- Actions -->
