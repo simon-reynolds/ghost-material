@@ -12,7 +12,7 @@
       </a>
     </div>
     <!-- Title -->
-    <span class="navbar--title">{{title}}</span>
+    <span class="navbar--title">{{name}}</span>
   </div>
 </nav>
 
@@ -32,7 +32,7 @@
   <!-- Content -->
   <div class="header--content onBottom container">
     <!-- Titles -->
-    <h1 class="header--title">{{title}}</h1>
+    <h1 class="header--title">{{name}}</h1>
     <h2 class="site-description">
         {{#if description}}
             {{description}}
@@ -50,15 +50,14 @@
 </header>
 {{/tag}}
 
-{{!-- The main content area --}}
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-        <div class="post-feed">
-            {{#foreach posts}}
-                {{> "post-card"}}
-            {{/foreach}}
-        </div>
-    </div>  
+{{! Blog content }}
+<main class="content" role="main">
+  <div class="main--content container">
+
+  {{#foreach posts}}
+    {{> "post-card"}}
+  {{/foreach}}
+  </div>
 </main>
 
 {{! Blog pagination }}
