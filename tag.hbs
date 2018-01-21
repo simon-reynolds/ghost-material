@@ -1,0 +1,65 @@
+{{!< default }}
+{{#tag}}
+
+
+{{! Post navbar }}
+<nav class="navbar shaded fixed autohide">
+  <div class="navbar--row container">
+    <!-- Icon -->
+    <div class="navbar--icon">
+      <a class="ripple" href="{{@blog.url}}">
+        <i class="mdi mdi-arrow-left"></i>
+      </a>
+    </div>
+    <!-- Title -->
+    <span class="navbar--title">{{title}}</span>
+  </div>
+</nav>
+
+
+{{! Post header }}
+<header class="header shaded bg-darken">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar--row container">
+      <div class="navbar--icon">
+        <a class="ripple" href="{{@blog.url}}">
+          <i class="mdi mdi-arrow-left"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- Content -->
+  <div class="header--content onBottom container">
+    <!-- Titles -->
+    <h1 class="header--title">{{title}}</h1>
+    <h2 class="site-description">
+        {{#if description}}
+            {{description}}
+        {{else}}
+            A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+        {{/if}}
+    </h2>
+  </div>
+  <!-- Background -->
+  {{#if feature_image}}
+    <img class="bg-image" src="{{img_url feature_image}}" />
+  {{else}}{{#if @blog.cover_image}}
+    <img class="bg-image" src="{{@blog.cover_image}}" />
+  {{/if}}{{/if}}
+</header>
+{{/tag}}
+
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <div class="post-feed">
+            {{#foreach posts}}
+                {{> "post-card"}}
+            {{/foreach}}
+        </div>
+    </div>  
+</main>
+
+{{! Blog pagination }}
+{{#if pagination}}{{pagination}}{{/if}}

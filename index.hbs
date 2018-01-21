@@ -36,37 +36,7 @@
   <div class="main--content container">
 
   {{#foreach posts}}
-    {{#if feature_image}}
-      <article class="card slide image" role="article">
-      <!-- Header -->
-      <header class="card--header bg-darken">
-    {{else}}
-      <article class="card slide" role="article">
-      <!-- Header -->
-      <header class="card--header">
-    {{/if}}
-        <!-- Title -->
-        <h5 class="card--title" itemprop="headline">{{title}}</h5>
-        <span class="card--subtitle">
-          <i class="fa fa-calendar-o"></i>
-          <time datetime="{{date format='YYYY-MM-DD'}}" itemprop="datePublished">
-            {{date format='DD MMM YYYY'}}
-          </time>
-        </span>
-        <!-- Image -->
-        {{#if feature_image}}<img class="bg-image" src="{{img_url feature_image}}" />{{/if}}
-      </header>
-      <!-- Content -->
-      <section class="card--main">
-        <summary class="card--content" itemprop="articleBody">
-          {{excerpt words="50"}}&hellip;
-        </summary>
-      </section>
-      <!-- Actions -->
-      <footer class="card--actions right">
-        <a class="button ripple" href="{{url}}">More</a>
-      </footer>
-    </article>
+    {{> "post-card"}}
   {{/foreach}}
   </div>
 </main>
