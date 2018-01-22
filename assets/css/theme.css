@@ -16,6 +16,9 @@ a:hover {
 .bg-image.no-image {
   background-color: #2E2E2E;
 }
+.bg-image {
+  object-position: 50% 80%;
+}
 
 /* --- Navbar --------------------------------------------------------------- */
 
@@ -40,8 +43,13 @@ a:hover {
 .header .navbar.fixed.autohide.show {
   background-color: #2E2E2E;
 }
+.header--title {
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 .header--subtitle {
   color: #ddd;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 /* --- Content -------------------------------------------------------------- */
